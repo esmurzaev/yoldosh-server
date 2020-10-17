@@ -1,0 +1,3 @@
+adminPort: "60000"
+clientPort: "60001"
+driverPort: "60002"
