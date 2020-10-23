@@ -33,7 +33,7 @@ var (
 
 //-------------------------------------------------------------------------------------------------------
 
-func serveClient(addr string) error {
+func listenAndServeClient(addr string) error {
 	lAddr, err := net.ResolveTCPAddr("tcp", addr)
 	if err != nil {
 		return err

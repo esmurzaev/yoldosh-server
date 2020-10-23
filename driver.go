@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func serveDriver(addr string) error {
+func listenAndServeDriver(addr string) error {
 	lAddr, err := net.ResolveTCPAddr("tcp", addr)
 	if err != nil {
 		return err

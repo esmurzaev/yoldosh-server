@@ -54,7 +54,7 @@ func (a *auint32) get() uint32 {
 	return atomic.LoadUint32(&a.value)
 }
 
-func serveAdmin(addr string) error {
+func listenAndServeAdmin(addr string) error {
 	lAddr, err := net.ResolveTCPAddr("tcp", addr)
 	if err != nil {
 		return err

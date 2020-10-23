@@ -9,8 +9,8 @@ import (
 )
 
 const (
-	apiVersion      = 1
 	confPath        = "conf.yaml"
+	apiVersion      = 1
 	clientsMaxNum   = uint32(1000000)
 	driversMaxNum   = uint32(500000)
 	adminMasterCode = uint64(0x105F218E5BFEC13E)
@@ -60,12 +60,12 @@ func main() {
 	log.Println("---------- Server started ----------")
 
 	go func() {
-		log.Fatal(serveClient(conf.ClientPort))
+		log.Fatal(listenAndServeClient(conf.ClientPort))
 	}()
 
 	go func() {
-		log.Fatal(serveDriver(conf.DriverPort))
+		log.Fatal(listenAndServeDriver(conf.DriverPort))
 	}()
 
-	log.Fatal(serveAdmin(conf.AdminPort))
+	log.Fatal(listenAndServeAdmin(conf.AdminPort))
 }
